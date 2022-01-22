@@ -5,16 +5,12 @@ import lombok.*;
 // @Data // gettersetter+hashcode+toString
 @NoArgsConstructor // parametresiz constructor
 @AllArgsConstructor // Parametreli constructor
-
+@Builder
 public class LombokTutorials {
 
-    @Getter @Setter
+   // @Getter @Setter
     private String adi;
-
-    @Getter @Setter
     private String soyadi;
-
-    @Getter @Setter
     private String numarasi;
 
     @Override
@@ -24,5 +20,13 @@ public class LombokTutorials {
                 ", soyadi='" + soyadi + '\'' +
                 ", numarasi='" + numarasi + '\'' +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        LombokTutorials tutorials=LombokTutorials.builder()
+                .adi("Berkan")
+                .soyadi("Gürel")
+                .numarasi("123")
+                .build();
     }
 }
